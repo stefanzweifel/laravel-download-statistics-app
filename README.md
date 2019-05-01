@@ -25,12 +25,21 @@ php artisan app:fetch-downloads
 
 **Important:** The command dispatches Jobs to download the actual numbers. For best performance, setup a local queue environment with Redis, change `QUEUE_CONNECTION` to `redis` and run `php artisan horizon`. Laravel Horizon will take care of the queues.
 
-
 To get download statistics for a specific month run 
 
 ```shell
 php artisan app:fetch-downloads 2019-01
 ```
+
+## Deployment
+
+As the content of the pages only update once every month, the app is hosted on Netlify. To create a new HTML build run the following:
+
+```shell
+php artisan export
+```
+
+Commit the changes in the `dist`-folder.
 
 ## License
 
