@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28d9bcce339eaa9f3966808084db2bf6",
+    "content-hash": "7ebc14bc31a044cb759f365af196484b",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2456,16 +2456,16 @@
         },
         {
             "name": "spatie/laravel-export",
-            "version": "0.1.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-export.git",
-                "reference": "4659e15a6aaebf5e2135cc8629f8861fab91eb9f"
+                "reference": "0fae3a05312cc8662d5af7705c26549c05d5adab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-export/zipball/4659e15a6aaebf5e2135cc8629f8861fab91eb9f",
-                "reference": "4659e15a6aaebf5e2135cc8629f8861fab91eb9f",
+                "url": "https://api.github.com/repos/spatie/laravel-export/zipball/0fae3a05312cc8662d5af7705c26549c05d5adab",
+                "reference": "0fae3a05312cc8662d5af7705c26549c05d5adab",
                 "shasum": ""
             },
             "require": {
@@ -2516,7 +2516,7 @@
                 "laravel-export",
                 "spatie"
             ],
-            "time": "2019-03-27T15:26:55+00:00"
+            "time": "2019-04-19T14:14:27+00:00"
         },
         {
             "name": "spatie/robots-txt",
@@ -5977,7 +5977,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "spatie/laravel-export": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
