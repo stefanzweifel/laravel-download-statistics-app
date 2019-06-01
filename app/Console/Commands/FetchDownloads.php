@@ -41,8 +41,17 @@ class FetchDownloads extends Command
             $toDate = Carbon::parse("last day of {$date}");
         }
 
+        $this->fetchVersionsAndDispatchJobs($fromDate, $toDate);
+    }
+
+    private function fetchVersionsAndDispatchJobs($fromDate, $toDate)
+    {
         $jobChainCollection = $this->getNormalizedLaravelVersions()->map(function ($version) use ($fromDate, $toDate) {
             return new FetchDownloadsForVersionJob($version, $fromDate, $toDate);
+        });
+
+        $jobChainCollection->each(function ($job) {
+            dispatch($job);
         });
 
         // dd($jobChainCollection);
@@ -50,7 +59,7 @@ class FetchDownloads extends Command
         // ProcessPodcast::withChain([
         //     new OptimizePodcast,
         //     new ReleasePodcast
-        // ])->dispatch();
+        // ])->dispatch();        // code
     }
 
     private function getNormalizedLaravelVersions(): Collection

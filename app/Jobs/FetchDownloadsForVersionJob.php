@@ -11,7 +11,6 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Redis;
 
 class FetchDownloadsForVersionJob implements ShouldQueue
 {
@@ -20,17 +19,17 @@ class FetchDownloadsForVersionJob implements ShouldQueue
     /**
      * @var string
      */
-    private $version;
+    public $version;
 
     /**
      * @var Carbon
      */
-    private $from;
+    public $from;
 
     /**
      * @var Carbon
      */
-    private $to;
+    public $to;
 
     /**
      * Create a new job instance.
@@ -51,21 +50,17 @@ class FetchDownloadsForVersionJob implements ShouldQueue
      */
     public function handle()
     {
-        Redis::throttle(self::class)->allow(1000)->every(60)->then(function () {
-            $this->fetchAndStoreDownloads();
-        }, function () {
-            return $this->release(10);
-        });
-    }
-
-    private function fetchAndStoreDownloads()
-    {
         $downloads = array_get($this->fetchDataFromPackagist(), 'values.0', 0);
 
         if ($downloads === 0) {
             return;
         }
 
+        $this->storeDownloads($downloads);
+    }
+
+    private function storeDownloads(int $downloads): void
+    {
         DownloadsPerMonth::updateOrCreate([
             'version' => $this->version,
             'minor_version' => Version::minorVersion($this->version),
