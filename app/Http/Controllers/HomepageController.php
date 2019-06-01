@@ -20,7 +20,6 @@ class HomepageController extends Controller
             return $month->format('Y');
         });
 
-
         $downloadsLastMonth = DownloadsPerMonth::query()
                 ->where('date', Carbon::parse('first day of this month')->subMonth()->format('Y-m'))
                 ->get()

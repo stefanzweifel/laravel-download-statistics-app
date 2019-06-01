@@ -72,7 +72,7 @@ class FetchDownloadsForVersionJob implements ShouldQueue
         ]);
     }
 
-    private function fetchDataFromPackagist() : array
+    private function fetchDataFromPackagist(): array
     {
         $from = $this->from->format('Y-m-d');
         $to = $this->to->format('Y-m-d');

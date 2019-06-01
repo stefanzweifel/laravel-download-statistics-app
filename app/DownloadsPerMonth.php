@@ -14,11 +14,11 @@ class DownloadsPerMonth extends Model
         'year',
         'month',
         'date',
-        'downloads'
+        'downloads',
     ];
 
     protected $casts = [
-        'downloads' => 'integer'
+        'downloads' => 'integer',
     ];
 
     public function scopeInTheLastYear(Builder $query) : Builder
@@ -36,7 +36,7 @@ class DownloadsPerMonth extends Model
             ->get([
                 'minor_version',
                 'date',
-                DB::raw('sum(downloads) as downloads')
+                DB::raw('sum(downloads) as downloads'),
             ]);
     }
 
@@ -49,7 +49,7 @@ class DownloadsPerMonth extends Model
             ->get([
                 'minor_version',
                 'date',
-                DB::raw('sum(downloads) as downloads')
+                DB::raw('sum(downloads) as downloads'),
             ]);
     }
 
@@ -62,7 +62,7 @@ class DownloadsPerMonth extends Model
             ->get([
                 'minor_version',
                 'date',
-                DB::raw('sum(downloads) as downloads')
+                DB::raw('sum(downloads) as downloads'),
             ]);
     }
 }

@@ -25,7 +25,7 @@ class DownloadsByMonthController extends Controller
             'date' => Carbon::parse($date),
             'mostPopular' => $mostPopular,
             'downloadsHistory' => $downloads,
-            'downloadsHistoryDataSet' => $dataSet->get($downloads, 'date')->first()['values']
+            'downloadsHistoryDataSet' => $dataSet->get($downloads, 'date')->first()['values'],
         ]);
     }
 

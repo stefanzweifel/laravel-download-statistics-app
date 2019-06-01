@@ -24,13 +24,13 @@ class DownloadsByMonthControllerTest extends TestCase
             'version' => 'v5.1.1',
             'minor_version' => 'v5.1',
             'downloads' => 30,
-            'date' => '2019-01'
+            'date' => '2019-01',
         ]);
         factory(DownloadsPerMonth::class)->create([
             'version' => 'v5.0.0',
             'minor_version' => 'v5.0',
             'downloads' => 10,
-            'date' => '2019-01'
+            'date' => '2019-01',
         ]);
 
         $response = $this->get(route('downloads.byMonth', '2019-01'))
@@ -57,7 +57,7 @@ class DownloadsByMonthControllerTest extends TestCase
                 'percentage' => 75,
                 'previous_month' => null,
                 'change_to_previous_month_percentage' => null,
-            ]
+            ],
         ], $downloadsHistory->toArray());
     }
 }

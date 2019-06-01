@@ -25,7 +25,7 @@ class DownloadsByVersionDataSet
 
                 return [
                     'name' => $key,
-                    'values' => $values->pluck('downloads')->pad(-1 * $maxNumberOfDataPoints, 0)
+                    'values' => $values->pluck('downloads')->pad(-1 * $maxNumberOfDataPoints, 0),
                 ];
             })
             ->values();
