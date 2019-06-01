@@ -2,7 +2,8 @@
 
 $finder = Symfony\Component\Finder\Finder::create()
     ->notPath('vendor')
-    ->notPath('source')
+    ->notPath('bootstrap')
+    ->notPath('storage')
     ->in(__DIR__)
     ->name('*.php')
     ->notName('*.blade.php');
