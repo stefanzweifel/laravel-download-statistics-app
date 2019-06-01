@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke()
     {
         $availableMonths = collect(CarbonInterval::months(1)->toPeriod(
             Carbon::parse('2013-05-01'),
