@@ -53,7 +53,7 @@ class FetchDownloadsForVersionJob implements ShouldQueue
         $result = $this->fetchDataFromPackagist();
         $downloads = array_get($result, 'values.0');
 
-        if ($downloads == 0) {
+        if ($downloads === 0) {
             return;
         }
 
@@ -80,7 +80,6 @@ class FetchDownloadsForVersionJob implements ShouldQueue
 
         $url = "https://packagist.org/packages/laravel/framework/stats/{$this->version}.json?average=monthly&from={$from}&to={$to}";
 
-        // Cache Results forever
         return Cache::rememberForever(md5($url), function () use ($url) {
             return json_decode(file_get_contents($url), true);
         });
