@@ -4,7 +4,6 @@ namespace Tests\Feature\Http;
 
 use App\DownloadsPerMonth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class DownloadsByVersionControllerTest extends TestCase
@@ -75,5 +74,4 @@ class DownloadsByVersionControllerTest extends TestCase
             ]
         ], $downloadsHistory->toArray());
     }
-
 }

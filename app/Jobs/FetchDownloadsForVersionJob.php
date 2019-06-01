@@ -12,7 +12,6 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
-use Illuminate\Support\Str;
 
 class FetchDownloadsForVersionJob implements ShouldQueue
 {
@@ -63,7 +62,7 @@ class FetchDownloadsForVersionJob implements ShouldQueue
             'year' => $this->from->format('Y'),
             'month' => $this->from->format('m'),
             'date' => $this->from->format('Y-m'),
-        ],[
+        ], [
             'version' => $this->version,
             'minor_version' => Version::minorVersion($this->version),
             'year' => $this->from->format('Y'),
@@ -84,5 +83,4 @@ class FetchDownloadsForVersionJob implements ShouldQueue
             return json_decode(file_get_contents($url), true);
         });
     }
-
 }

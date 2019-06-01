@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\DownloadsPerMonth;
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
-use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {

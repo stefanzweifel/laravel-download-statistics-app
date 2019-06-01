@@ -27,7 +27,6 @@ class DownloadsByMonthController extends Controller
             'downloadsHistory' => $downloads,
             'downloadsHistoryDataSet' => $dataSet->get($downloads, 'date')->first()['values']
         ]);
-
     }
 
     private function appendDataToSingleVersion(DownloadsPerMonth $version, int $totalDownloads)

@@ -4,7 +4,6 @@ namespace Tests\Feature\Http;
 
 use App\DownloadsPerMonth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class DownloadsByMonthControllerTest extends TestCase
@@ -21,7 +20,6 @@ class DownloadsByMonthControllerTest extends TestCase
     /** @test */
     public function it_returns_statistics_data_for_given_month()
     {
-
         factory(DownloadsPerMonth::class)->create([
             'version' => 'v5.1.1',
             'minor_version' => 'v5.1',
@@ -61,7 +59,5 @@ class DownloadsByMonthControllerTest extends TestCase
                 'change_to_previous_month_percentage' => null,
             ]
         ], $downloadsHistory->toArray());
-
     }
-
 }

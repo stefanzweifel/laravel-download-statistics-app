@@ -65,6 +65,4 @@ class DownloadsPerMonth extends Model
                 DB::raw('sum(downloads) as downloads')
             ]);
     }
-
-
 }

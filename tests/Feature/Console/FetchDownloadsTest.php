@@ -5,7 +5,6 @@ namespace Tests\Feature\Console;
 use App\Jobs\FetchDownloadsForVersionJob;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Queue;
 use Tests\TestCase;
 
@@ -46,5 +45,4 @@ class FetchDownloadsTest extends TestCase
                 $job->from->format('Y-m') == '2018-12';
         });
     }
-
 }
