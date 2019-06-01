@@ -13,7 +13,6 @@
         "itsgoingd/clockwork": "^3.1",
         "laravel/framework": "5.8.*",
         "laravel/horizon": "^3.0",
-        "laravel/tinker": "^1.0",
         "spatie/laravel-export": "dev-master"
     },
     "require-dev": {
