@@ -8,7 +8,7 @@ class DownloadsByVersionDataSet
 {
     public function get(Collection $downloadsByVersion, $versionType = 'minor_version')
     {
-        $maxNumberOfDataPoints = $this->getMaxNumberOfDataPoints();
+        $maxNumberOfDataPoints = $this->getMaxNumberOfDataPoints($downloadsByVersion, $versionType);
 
         return $downloadsByVersion
             ->groupBy($versionType)

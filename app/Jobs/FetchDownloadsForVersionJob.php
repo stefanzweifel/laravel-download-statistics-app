@@ -17,9 +17,20 @@ class FetchDownloadsForVersionJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public $version;
-    public $from;
-    public $to;
+    /**
+     * @var string
+     */
+    private $version;
+
+    /**
+     * @var Carbon
+     */
+    private $from;
+
+    /**
+     * @var Carbon
+     */
+    private $to;
 
     /**
      * Create a new job instance.
@@ -40,7 +51,7 @@ class FetchDownloadsForVersionJob implements ShouldQueue
      */
     public function handle()
     {
-        Redis::throttle(get_class($this))->allow(1000)->every(60)->then(function () {
+        Redis::throttle(self::class)->allow(1000)->every(60)->then(function () {
             $this->fetchAndStoreDownloads();
         }, function () {
             return $this->release(10);

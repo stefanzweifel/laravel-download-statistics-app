@@ -8,6 +8,9 @@ use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses;
 use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenPrivateMethods;
 use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits;
 use NunoMaduro\PhpInsights\Domain\Metrics\Architecture\Classes;
+use PHP_CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\UselessOverridingMethodSniff;
+use PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff;
+use SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff;
@@ -42,14 +45,7 @@ return [
     */
 
     'exclude' => [
-        'app/Http/Middleware',
-        'app/Providers',
-        'app/Exceptions',
-        'bootstrap',
-        'database',
-        'resources',
-        'storage',
-        'vendor',
+        //  'path/to/directory-or-file'
     ],
 
     'add' => [
@@ -66,6 +62,9 @@ return [
         ForbiddenNormalClasses::class,
         ForbiddenTraits::class,
         TypeHintDeclarationSniff::class,
+        LineLengthSniff::class,
+        EmptyCommentSniff::class,
+        UselessOverridingMethodSniff::class,
     ],
 
     'config' => [
