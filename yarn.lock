@@ -642,10 +642,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@github/details-menu-element@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@github/details-menu-element/-/details-menu-element-0.9.0.tgz#81203c0bb805cbb50fa72179bff901a5bdfe2d13"
-  integrity sha512-6pqQC9LK/ZZpHEExN/InQnOmPBtqKiZCJjVcvYQmE7A4i/NbUZOElytRoiSht4HS8aMyljaow8lbhy7KmLyMDg==
+"@github/details-menu-element@^1.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@github/details-menu-element/-/details-menu-element-1.0.0.tgz#23db09cc4725a2e38e6d640ec210ae47772da6ca"
+  integrity sha512-GnVeVpBIE1uxnpDJmjjiaDjkqz7XOcdBd1liIQW9gjqzn3zJBFcyLibNX+TkYGVEbIrhSQnXLWTViIUOBFje/g==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
