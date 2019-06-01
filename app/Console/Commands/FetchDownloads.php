@@ -44,22 +44,11 @@ class FetchDownloads extends Command
         $this->fetchVersionsAndDispatchJobs($fromDate, $toDate);
     }
 
-    private function fetchVersionsAndDispatchJobs($fromDate, $toDate)
+    private function fetchVersionsAndDispatchJobs($fromDate, $toDate): void
     {
-        $jobChainCollection = $this->getNormalizedLaravelVersions()->map(function ($version) use ($fromDate, $toDate) {
-            return new FetchDownloadsForVersionJob($version, $fromDate, $toDate);
+        $this->getNormalizedLaravelVersions()->each(function ($version) use ($fromDate, $toDate) {
+            dispatch(new FetchDownloadsForVersionJob($version, $fromDate, $toDate));
         });
-
-        $jobChainCollection->each(function ($job) {
-            dispatch($job);
-        });
-
-        // dd($jobChainCollection);
-
-        // ProcessPodcast::withChain([
-        //     new OptimizePodcast,
-        //     new ReleasePodcast
-        // ])->dispatch();        // code
     }
 
     private function getNormalizedLaravelVersions(): Collection
