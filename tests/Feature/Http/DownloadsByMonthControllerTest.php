@@ -4,7 +4,6 @@ namespace Tests\Feature\Http;
 
 use App\DownloadsPerMonth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class DownloadsByMonthControllerTest extends TestCase
@@ -21,18 +20,17 @@ class DownloadsByMonthControllerTest extends TestCase
     /** @test */
     public function it_returns_statistics_data_for_given_month()
     {
-
         factory(DownloadsPerMonth::class)->create([
             'version' => 'v5.1.1',
             'minor_version' => 'v5.1',
             'downloads' => 30,
-            'date' => '2019-01'
+            'date' => '2019-01',
         ]);
         factory(DownloadsPerMonth::class)->create([
             'version' => 'v5.0.0',
             'minor_version' => 'v5.0',
             'downloads' => 10,
-            'date' => '2019-01'
+            'date' => '2019-01',
         ]);
 
         $response = $this->get(route('downloads.byMonth', '2019-01'))
@@ -43,19 +41,23 @@ class DownloadsByMonthControllerTest extends TestCase
 
         $this->assertEquals(40, $downloadsHistory->sum('downloads'));
 
-        $this->assertArraySubset([
+        $this->assertEquals([
             [
                 'minor_version' => 'v5.0',
                 'date' => '2019-01',
-                'downloads' => 10
+                'downloads' => 10,
+                'percentage' => 25,
+                'previous_month' => null,
+                'change_to_previous_month_percentage' => null,
             ],
             [
                 'minor_version' => 'v5.1',
                 'date' => '2019-01',
-                'downloads' => 30
-            ]
+                'downloads' => 30,
+                'percentage' => 75,
+                'previous_month' => null,
+                'change_to_previous_month_percentage' => null,
+            ],
         ], $downloadsHistory->toArray());
-
     }
-
 }

@@ -17,7 +17,7 @@ class DownloadsByVersionController extends Controller
         return view('downloads.byVersion')->with([
             'version' => $version,
             'downloadsHistory' => $downloads,
-            'downloadsHistoryDataSet' => $dataSet->get($downloads)
+            'downloadsHistoryDataSet' => $dataSet->get($downloads),
         ]);
     }
 }

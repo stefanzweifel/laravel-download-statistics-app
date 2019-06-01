@@ -4,7 +4,6 @@ namespace Tests\Feature\Http;
 
 use App\DownloadsPerMonth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class DownloadsByVersionControllerTest extends TestCase
@@ -26,31 +25,31 @@ class DownloadsByVersionControllerTest extends TestCase
             'version' => 'v5.1.1',
             'minor_version' => 'v5.1',
             'downloads' => 30,
-            'date' => now()->subMonths(1)->format('Y-m')
+            'date' => now()->subMonths(1)->format('Y-m'),
         ]);
         factory(DownloadsPerMonth::class)->create([
             'version' => 'v5.0.0',
             'minor_version' => 'v5.0',
             'downloads' => 10,
-            'date' => now()->subMonths(2)->format('Y-m')
+            'date' => now()->subMonths(2)->format('Y-m'),
         ]);
         factory(DownloadsPerMonth::class)->create([
             'version' => 'v5.0.1',
             'minor_version' => 'v5.0',
             'downloads' => 10,
-            'date' => now()->subMonths(1)->format('Y-m')
+            'date' => now()->subMonths(1)->format('Y-m'),
         ]);
         factory(DownloadsPerMonth::class)->create([
             'version' => 'v5.0.2',
             'minor_version' => 'v5.0',
             'downloads' => 20,
-            'date' => now()->subMonths(1)->format('Y-m')
+            'date' => now()->subMonths(1)->format('Y-m'),
         ]);
         factory(DownloadsPerMonth::class)->create([
             'version' => 'v5.0.3',
             'minor_version' => 'v5.0',
             'downloads' => 30,
-            'date' => now()->subMonths(1)->format('Y-m')
+            'date' => now()->subMonths(1)->format('Y-m'),
         ]);
 
         $response = $this
@@ -62,18 +61,17 @@ class DownloadsByVersionControllerTest extends TestCase
 
         $this->assertEquals(70, $downloadsHistory->sum('downloads'));
 
-        $this->assertArraySubset([
+        $this->assertEquals([
             [
                 'minor_version' => 'v5.0',
                 'date' => now()->subMonths(2)->format('Y-m'),
-                'downloads' => 10
+                'downloads' => 10,
             ],
             [
                 'minor_version' => 'v5.0',
                 'date' => now()->subMonths(1)->format('Y-m'),
-                'downloads' => 60
-            ]
+                'downloads' => 60,
+            ],
         ], $downloadsHistory->toArray());
     }
-
 }

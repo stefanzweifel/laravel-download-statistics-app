@@ -16,6 +16,5 @@ abstract class TestCase extends BaseTestCase
         TestResponse::macro('data', function ($key) {
             return $this->original->getData()[$key];
         });
-
     }
 }

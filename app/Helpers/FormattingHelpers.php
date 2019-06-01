@@ -1,9 +1,8 @@
 <?php
 
 if (! function_exists('format_download_numbers')) {
-
-    function format_download_numbers(int $downloads) {
+    function format_download_numbers(int $downloads): string
+    {
         return number_format($downloads, 0, '.', '\'');
     }
-
 }

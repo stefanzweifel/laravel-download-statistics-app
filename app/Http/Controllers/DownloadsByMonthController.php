@@ -25,18 +25,17 @@ class DownloadsByMonthController extends Controller
             'date' => Carbon::parse($date),
             'mostPopular' => $mostPopular,
             'downloadsHistory' => $downloads,
-            'downloadsHistoryDataSet' => $dataSet->get($downloads, 'date')->first()['values']
+            'downloadsHistoryDataSet' => $dataSet->get($downloads, 'date')->first()['values'],
         ]);
-
     }
 
-    private function appendDataToSingleVersion(DownloadsPerMonth $version, int $totalDownloads)
+    private function appendDataToSingleVersion(DownloadsPerMonth $version, int $totalDownloads): DownloadsPerMonth
     {
         $previousMonth = app(DownloadsPerMonth::class)
-                ->getDownloadsByMinorVersionAndByMonth(
-                    $version->minor_version,
-                    Carbon::parse($version->date)->subMonth()->format('Y-m')
-                )->first();
+            ->getDownloadsByMinorVersionAndByMonth(
+                $version->minor_version,
+                Carbon::parse($version->date)->subMonth()->format('Y-m')
+            )->first();
 
         $version['percentage'] = $version->downloads / $totalDownloads * 100;
         $version['previous_month'] = $previousMonth;
