@@ -49,8 +49,7 @@ class FetchDownloadsForVersionJob implements ShouldQueue
 
     private function fetchAndStoreDownloads()
     {
-        $result = $this->fetchDataFromPackagist();
-        $downloads = array_get($result, 'values.0');
+        $downloads = array_get($this->fetchDataFromPackagist(), 'values.0', 0);
 
         if ($downloads === 0) {
             return;

@@ -8,13 +8,7 @@ class DownloadsByVersionDataSet
 {
     public function get(Collection $downloadsByVersion, $versionType = 'minor_version')
     {
-        $maxNumberOfDataPoints = $downloadsByVersion
-            ->groupBy($versionType)
-            ->map(function ($version) {
-                return $version->count();
-            })
-            ->values()
-            ->max();
+        $maxNumberOfDataPoints = $this->getMaxNumberOfDataPoints();
 
         return $downloadsByVersion
             ->groupBy($versionType)
@@ -29,5 +23,16 @@ class DownloadsByVersionDataSet
                 ];
             })
             ->values();
+    }
+
+    private function getMaxNumberOfDataPoints(Collection $downloadsByVersion, string $versionType)
+    {
+        return $downloadsByVersion
+            ->groupBy($versionType)
+            ->map(function ($version) {
+                return $version->count();
+            })
+            ->values()
+            ->max();
     }
 }

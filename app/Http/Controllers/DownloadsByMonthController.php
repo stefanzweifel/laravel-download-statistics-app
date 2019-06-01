@@ -32,10 +32,10 @@ class DownloadsByMonthController extends Controller
     private function appendDataToSingleVersion(DownloadsPerMonth $version, int $totalDownloads)
     {
         $previousMonth = app(DownloadsPerMonth::class)
-                ->getDownloadsByMinorVersionAndByMonth(
-                    $version->minor_version,
-                    Carbon::parse($version->date)->subMonth()->format('Y-m')
-                )->first();
+            ->getDownloadsByMinorVersionAndByMonth(
+                $version->minor_version,
+                Carbon::parse($version->date)->subMonth()->format('Y-m')
+            )->first();
 
         $version['percentage'] = $version->downloads / $totalDownloads * 100;
         $version['previous_month'] = $previousMonth;

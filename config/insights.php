@@ -42,7 +42,14 @@ return [
     */
 
     'exclude' => [
-        //  'path/to/directory-or-file'
+        'app/Http/Middleware',
+        'app/Providers',
+        'app/Exceptions',
+        'bootstrap',
+        'database',
+        'resources',
+        'storage',
+        'vendor',
     ],
 
     'add' => [

@@ -7,7 +7,6 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Storage;
 
 class FetchDownloads extends Command
 {
@@ -26,16 +25,6 @@ class FetchDownloads extends Command
     protected $description = 'Fetch downloads data from packagist.org';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -52,14 +41,19 @@ class FetchDownloads extends Command
             $toDate = Carbon::parse("last day of {$date}");
         }
 
-        $this->getNormalizedLaravelVersions()->each(function ($version) use ($fromDate, $toDate) {
-            dispatch(
-                new FetchDownloadsForVersionJob($version, $fromDate, $toDate)
-            );
+        $jobChainCollection = $this->getNormalizedLaravelVersions()->map(function ($version) use ($fromDate, $toDate) {
+            return new FetchDownloadsForVersionJob($version, $fromDate, $toDate);
         });
+
+        // dd($jobChainCollection);
+
+        // ProcessPodcast::withChain([
+        //     new OptimizePodcast,
+        //     new ReleasePodcast
+        // ])->dispatch();
     }
 
-    private function getNormalizedLaravelVersions() : Collection
+    private function getNormalizedLaravelVersions(): Collection
     {
         $versions = collect(array_get($this->getResponseFromPackagist(), 'package.versions'));
 
@@ -79,7 +73,6 @@ class FetchDownloads extends Command
         $url = 'https://packagist.org/packages/laravel/framework.json';
 
         return Cache::remember(md5($url), now()->addHour(), function () use ($url) {
-
             if (app()->environment('testing')) {
                 $url = base_path('tests/stub/packages-laravel-framework.json');
             }

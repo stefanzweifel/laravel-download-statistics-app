@@ -21,7 +21,7 @@ class DownloadsPerMonth extends Model
         'downloads' => 'integer',
     ];
 
-    public function scopeInTheLastYear(Builder $query) : Builder
+    public function scopeInTheLastYear(Builder $query): Builder
     {
         return $query->where('date', '>=', now()->subMonths(12)->format('Y-m'));
     }
