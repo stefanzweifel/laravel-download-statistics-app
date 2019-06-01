@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 class DownloadsByVersionDataSet
 {
-    public function get(Collection $downloadsByVersion, $versionType = 'minor_version')
+    public function get(Collection $downloadsByVersion, $versionType = 'minor_version'): Collection
     {
         $maxNumberOfDataPoints = $this->getMaxNumberOfDataPoints($downloadsByVersion, $versionType);
 
@@ -25,7 +25,7 @@ class DownloadsByVersionDataSet
             ->values();
     }
 
-    private function getMaxNumberOfDataPoints(Collection $downloadsByVersion, string $versionType)
+    private function getMaxNumberOfDataPoints(Collection $downloadsByVersion, string $versionType): int
     {
         return $downloadsByVersion
             ->groupBy($versionType)

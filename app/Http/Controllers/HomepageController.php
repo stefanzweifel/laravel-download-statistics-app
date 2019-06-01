@@ -20,13 +20,15 @@ class HomepageController extends Controller
             return $month->format('Y');
         });
 
-        $downloadsLastMonth = $this->getDownloadsLastMonth();
-        $downloadsLastYear = $this->getDownloadsLastYear();
-
-        return view('home', compact('downloadsLastMonth', 'downloadsLastYear', 'availableMonths', 'availableMonthsGroupedByYear'));
+        return view('home')->with([
+            'downloadsLastMonth' => $this->downloadsLastMonth(),
+            'downloadsLastYear' => $this->downloadsLastYear(),
+            'availableMonths' => $availableMonths,
+            'availableMonthsGroupedByYear' => $availableMonthsGroupedByYear,
+        ]);
     }
 
-    private function getDownloadsLastMonth()
+    private function downloadsLastMonth(): int
     {
         return DownloadsPerMonth::query()
             ->where('date', Carbon::parse('first day of this month')->subMonth()->format('Y-m'))
@@ -34,7 +36,7 @@ class HomepageController extends Controller
             ->sum('downloads');
     }
 
-    private function getDownloadsLastYear()
+    private function downloadsLastYear(): int
     {
         return DownloadsPerMonth::query()
             ->where('date', '>=', Carbon::parse('first day of this month')->subMonths(12)->format('Y-m'))

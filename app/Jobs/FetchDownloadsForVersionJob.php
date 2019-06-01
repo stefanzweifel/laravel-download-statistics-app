@@ -22,20 +22,15 @@ class FetchDownloadsForVersionJob implements ShouldQueue
     public $version;
 
     /**
-     * @var Carbon
+     * @var \Carbon\Carbon
      */
     public $from;
 
     /**
-     * @var Carbon
+     * @var \Carbon\Carbon
      */
     public $to;
 
-    /**
-     * Create a new job instance.
-     *
-     * @return void
-     */
     public function __construct(string $version, Carbon $from, Carbon $to)
     {
         $this->version = $version;
@@ -43,11 +38,6 @@ class FetchDownloadsForVersionJob implements ShouldQueue
         $this->to = $to;
     }
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
     public function handle()
     {
         $downloads = array_get($this->fetchDataFromPackagist(), 'values.0', 0);

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -26,8 +27,7 @@ class DownloadsPerMonth extends Model
         return $query->where('date', '>=', now()->subMonths(12)->format('Y-m'));
     }
 
-
-    public function getDownloadsGroupedByMinorVersion(string $date)
+    public function getDownloadsGroupedByMinorVersion(string $date): Collection
     {
         return self::query()
             ->where('date', $date)
@@ -40,7 +40,7 @@ class DownloadsPerMonth extends Model
             ]);
     }
 
-    public function getDownloadsPerMonthByMinorVersion(string $version)
+    public function getDownloadsPerMonthByMinorVersion(string $version): Collection
     {
         return self::query()
             ->where('minor_version', $version)
@@ -53,7 +53,7 @@ class DownloadsPerMonth extends Model
             ]);
     }
 
-    public function getDownloadsByMinorVersionAndByMonth(string $version, string $month)
+    public function getDownloadsByMinorVersionAndByMonth(string $version, string $month): Collection
     {
         return self::query()
             ->where('minor_version', $version)

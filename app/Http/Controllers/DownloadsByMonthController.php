@@ -29,7 +29,7 @@ class DownloadsByMonthController extends Controller
         ]);
     }
 
-    private function appendDataToSingleVersion(DownloadsPerMonth $version, int $totalDownloads)
+    private function appendDataToSingleVersion(DownloadsPerMonth $version, int $totalDownloads): DownloadsPerMonth
     {
         $previousMonth = app(DownloadsPerMonth::class)
             ->getDownloadsByMinorVersionAndByMonth(

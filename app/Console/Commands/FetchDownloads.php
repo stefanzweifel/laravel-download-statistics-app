@@ -77,7 +77,7 @@ class FetchDownloads extends Command
             ->values();
     }
 
-    private function getResponseFromPackagist()
+    private function getResponseFromPackagist(): array
     {
         $url = 'https://packagist.org/packages/laravel/framework.json';
 
