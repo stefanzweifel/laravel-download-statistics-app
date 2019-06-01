@@ -43,16 +43,22 @@ class DownloadsByMonthControllerTest extends TestCase
 
         $this->assertEquals(40, $downloadsHistory->sum('downloads'));
 
-        $this->assertArraySubset([
+        $this->assertEquals([
             [
                 'minor_version' => 'v5.0',
                 'date' => '2019-01',
-                'downloads' => 10
+                'downloads' => 10,
+                'percentage' => 25,
+                'previous_month' => null,
+                'change_to_previous_month_percentage' => null,
             ],
             [
                 'minor_version' => 'v5.1',
                 'date' => '2019-01',
-                'downloads' => 30
+                'downloads' => 30,
+                'percentage' => 75,
+                'previous_month' => null,
+                'change_to_previous_month_percentage' => null,
             ]
         ], $downloadsHistory->toArray());
 

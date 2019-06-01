@@ -62,7 +62,7 @@ class DownloadsByVersionControllerTest extends TestCase
 
         $this->assertEquals(70, $downloadsHistory->sum('downloads'));
 
-        $this->assertArraySubset([
+        $this->assertEquals([
             [
                 'minor_version' => 'v5.0',
                 'date' => now()->subMonths(2)->format('Y-m'),
