@@ -8,7 +8,7 @@ workflow "New Monthly Build" {
 # Install composer dependencies
 action "composer install" {
   uses = "MilesChou/composer-action@master"
-  args = "install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist"
+  args = "install --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist"
 }
 
 action "update-data" {
