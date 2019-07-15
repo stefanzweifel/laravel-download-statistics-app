@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b0cfa0940bc114d339a91b79a21e3c6",
+    "content-hash": "fd42b7bdd9aa0e8b05dadb6528904bcd",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -656,16 +656,16 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v3.1.4",
+            "version": "v4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "529b6f9e2ce487b900213cf1d0694d0aebd5977f"
+                "reference": "ff87014f5ed1d8689b7032787da68e8c1ad66f58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/529b6f9e2ce487b900213cf1d0694d0aebd5977f",
-                "reference": "529b6f9e2ce487b900213cf1d0694d0aebd5977f",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/ff87014f5ed1d8689b7032787da68e8c1ad66f58",
+                "reference": "ff87014f5ed1d8689b7032787da68e8c1ad66f58",
                 "shasum": ""
             },
             "require": {
@@ -710,7 +710,7 @@
                 "profiling",
                 "slim"
             ],
-            "time": "2019-03-21T20:24:39+00:00"
+            "time": "2019-07-12T11:54:02+00:00"
         },
         {
             "name": "laravel/framework",
