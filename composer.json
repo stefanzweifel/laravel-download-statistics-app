@@ -10,7 +10,7 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
-        "itsgoingd/clockwork": "^3.1",
+        "itsgoingd/clockwork": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/horizon": "^3.0",
         "spatie/laravel-export": "dev-master"
