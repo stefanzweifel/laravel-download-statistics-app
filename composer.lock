@@ -656,16 +656,16 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v4.0.2",
+            "version": "v4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "ff87014f5ed1d8689b7032787da68e8c1ad66f58"
+                "reference": "f6c5af53ca6a70a357ed79d9a7413053a0dace8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/ff87014f5ed1d8689b7032787da68e8c1ad66f58",
-                "reference": "ff87014f5ed1d8689b7032787da68e8c1ad66f58",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/f6c5af53ca6a70a357ed79d9a7413053a0dace8b",
+                "reference": "f6c5af53ca6a70a357ed79d9a7413053a0dace8b",
                 "shasum": ""
             },
             "require": {
@@ -710,7 +710,7 @@
                 "profiling",
                 "slim"
             ],
-            "time": "2019-07-12T11:54:02+00:00"
+            "time": "2019-07-18T22:03:23+00:00"
         },
         {
             "name": "laravel/framework",
@@ -6306,8 +6306,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
