@@ -657,16 +657,16 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v4.0.5",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "f6c5af53ca6a70a357ed79d9a7413053a0dace8b"
+                "reference": "0e1879c30093bf1e788e1238523850313b00f3db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/f6c5af53ca6a70a357ed79d9a7413053a0dace8b",
-                "reference": "f6c5af53ca6a70a357ed79d9a7413053a0dace8b",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/0e1879c30093bf1e788e1238523850313b00f3db",
+                "reference": "0e1879c30093bf1e788e1238523850313b00f3db",
                 "shasum": ""
             },
             "require": {
@@ -711,7 +711,7 @@
                 "profiling",
                 "slim"
             ],
-            "time": "2019-07-18T22:03:23+00:00"
+            "time": "2019-07-25T22:55:32+00:00"
         },
         {
             "name": "laravel/framework",
@@ -6035,8 +6035,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -8167,8 +8167,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
@@ -8314,9 +8314,9 @@
             "authors": [
                 {
                     "name": "Stefan Zweifel",
+                    "role": "Developer",
                     "email": "hello@stefanzweifel.io",
-                    "homepage": "https://stefanzweifel.io",
-                    "role": "Developer"
+                    "homepage": "https://stefanzweifel.io"
                 }
             ],
             "description": "Get insights about your Laravel Project",
