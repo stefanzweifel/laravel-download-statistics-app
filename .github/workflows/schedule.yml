@@ -1,0 +1,29 @@
+on:
+  schedules:
+  - cron: 15 1 1 * *
+name: New Monthly Build
+jobs:
+  update-data-set:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+      with:
+        fetch-depth: 1
+
+    - name: composer install
+      uses: MilesChou/composer-action@master
+      with:
+        args: install --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+
+    - name: Update Data and Generate HTML files
+      uses: ./.github/actions/update-data/
+
+    - name: Commit changed files
+      uses: stefanzweifel/git-auto-commit-action@v2.0.0
+      with:
+        commit_author_email: hello@stefanzweifel.io
+        commit_author_name: Stefan Zweifel
+        commit_message: Update Data Set
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
