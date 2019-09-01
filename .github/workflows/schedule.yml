@@ -1,6 +1,6 @@
 on:
-  schedules:
-  - cron: 15 1 1 * *
+  schedule:
+  - cron: '15 1 1 * *'
 name: New Monthly Build
 jobs:
   update-data-set:
