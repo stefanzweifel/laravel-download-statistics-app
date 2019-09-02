@@ -16,8 +16,17 @@ jobs:
       with:
         args: install --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
 
-    - name: Update Data and Generate HTML files
-      uses: ./.github/actions/update-data/
+    - name: Copy environment files
+      run: cp .env.example .env
+
+    - name: Generate app key
+      run: php artisan key:generate
+
+    - name: Fetch download numbers for last month
+      run: php artisan app:fetch-downloads
+
+    - name: Create new HTML Export
+      run: php artisan export
 
     - name: Commit changed files
       uses: stefanzweifel/git-auto-commit-action@v2.0.0
