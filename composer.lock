@@ -659,16 +659,16 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v4.0.7",
+            "version": "v4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "aa4c909b74fc5eb69367266bfad5a592bcc98b63"
+                "reference": "02c56826bcfb8e0eaf40afa160e761a5968a6a09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/aa4c909b74fc5eb69367266bfad5a592bcc98b63",
-                "reference": "aa4c909b74fc5eb69367266bfad5a592bcc98b63",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/02c56826bcfb8e0eaf40afa160e761a5968a6a09",
+                "reference": "02c56826bcfb8e0eaf40afa160e761a5968a6a09",
                 "shasum": ""
             },
             "require": {
@@ -713,7 +713,7 @@
                 "profiling",
                 "slim"
             ],
-            "time": "2019-08-07T12:40:49+00:00"
+            "time": "2019-09-03T14:27:17+00:00"
         },
         {
             "name": "laravel/framework",
