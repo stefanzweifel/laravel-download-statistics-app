@@ -19,7 +19,7 @@ class Version
     public static function isLaravelVersion(string $version): bool
     {
         // "v4.0 to v4.2" or "v5.0 to v5.8"
-        $pattern = '/(^v(4)\.([0-2])$)|(^v(5)\.([0-8])$)/';
+        $pattern = '/(^v(4)\.([0-2])$)|(^v(5)\.([0-8])$)|(^v(6)\.([0-8])$)/';
 
         return preg_match($pattern, $version);
     }

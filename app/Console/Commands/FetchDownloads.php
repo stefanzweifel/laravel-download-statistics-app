@@ -60,7 +60,7 @@ class FetchDownloads extends Command
         return $versions
             ->keys()
             ->filter(function ($version) {
-                $pattern = '/^v([4-5])\.(\d)*\.(\d)*$/';
+                $pattern = '/^v([4-6])\.(\d)*\.(\d)*$/';
                 return preg_match($pattern, $version);
             })
             ->values();
