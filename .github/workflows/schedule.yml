@@ -28,11 +28,9 @@ jobs:
     - name: Create new HTML Export
       run: php artisan export
 
-    - name: Commit changed files
-      uses: stefanzweifel/git-auto-commit-action@v2.0.0
+    - uses: stefanzweifel/git-auto-commit-action@v2.1.0
       with:
-        commit_author_email: hello@stefanzweifel.io
-        commit_author_name: Stefan Zweifel
         commit_message: Update Data Set
+        branch: ${{ github.head_ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
