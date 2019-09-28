@@ -11,6 +11,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 
 class FetchDownloadsForVersionJob implements ShouldQueue
 {
@@ -46,6 +47,8 @@ class FetchDownloadsForVersionJob implements ShouldQueue
             return;
         }
 
+        Log::debug("version: {$this->version} - month: {$this->from->format('Y-m')} - downloads: {$downloads}");
+
         $this->storeDownloads($downloads);
     }
 
@@ -63,7 +66,11 @@ class FetchDownloadsForVersionJob implements ShouldQueue
             'year' => $this->from->format('Y'),
             'month' => $this->from->format('m'),
             'date' => $this->from->format('Y-m'),
-            'downloads' => $downloads,
+
+            // The number in $downlaods is the number of *daily* installs.
+            // So we multiply the number of downloads by the number of days in the month
+            // to get to the average total number of downloads for the month.
+            'downloads' => $downloads * $this->from->daysInMonth,
         ]);
     }
 
