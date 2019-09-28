@@ -13,7 +13,7 @@
         "itsgoingd/clockwork": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/horizon": "^3.0",
-        "spatie/laravel-export": "dev-master"
+        "spatie/laravel-export": "0.1.5"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -53,7 +53,6 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "format": "php-cs-fixer fix",
