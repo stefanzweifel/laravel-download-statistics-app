@@ -60,12 +60,12 @@
     </section>
 
     <section class="bg-gray-200">
-        <div class="container mx-auto lg:max-w-lg py-6 md:py-12 px-4">
+        <div class="container mx-auto lg:max-w-xl py-6 md:py-12 px-4">
             <h2 class="font-bold text-4xl leading-none mb-4">Version Breakdown</h2>
 
             @foreach($downloadsHistory->reverse() as $version)
 
-                <div class="flex justify-between max-w-lg bg-white my-2 p-4 rounded shadow border border-gray-300">
+                <div class="flex justify-between max-w-xl bg-white my-2 p-4 rounded shadow border border-gray-300">
 
                     <div class="w-1/4">
                         <a href="{{ route('downloads.byVersion', $version->minor_version) }}">{{ $version->minor_version }}</a>
