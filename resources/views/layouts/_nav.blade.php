@@ -8,7 +8,7 @@
         <div class="flex">
 
             <details class="mr-8 relative">
-                <summary class="summary-hide-marker font-bold cursor-pointer">&#8609; by Version</summary>
+                <summary class="summary-hide-marker font-bold cursor-pointer">by Version @svg('zondicons/cheveron-down', 'h-4 inline-block')</summary>
                 <details-menu role="menu" class="absolute w-32 mt-2 -ml-1 bg-white border border-gray-300 rounded overflow-hidden shadow">
                     <ul class=" text-sm">
                         @foreach($navLaravelVersions->reverse() as $version)
@@ -21,7 +21,7 @@
             </details>
 
             <details class="relative">
-                <summary class="summary-hide-marker font-bold cursor-pointer">&#8609; by Month</summary>
+                <summary class="summary-hide-marker font-bold cursor-pointer">by Month @svg('zondicons/cheveron-down', 'h-4 inline-block')</summary>
                 <details-menu role="menu" class="absolute w-40 mt-2 -ml-1 bg-white border border-gray-300 rounded overflow-hidden shadow">
                     <ul class="text-sm">
                         @foreach($navMonths as $month)
