@@ -1,6 +1,7 @@
 on:
   schedule:
   - cron: '15 1 1 * *'
+
 name: New Monthly Build
 jobs:
   update-data-set:
@@ -31,6 +32,6 @@ jobs:
     - uses: stefanzweifel/git-auto-commit-action@v2.1.0
       with:
         commit_message: Update Data Set
-        branch: ${{ github.head_ref }}
+        branch: master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
