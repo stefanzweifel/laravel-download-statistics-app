@@ -9,6 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -41,7 +42,7 @@ class FetchDownloadsForVersionJob implements ShouldQueue
 
     public function handle()
     {
-        $downloads = array_get($this->fetchDataFromPackagist(), 'values.0', 0);
+        $downloads = Arr::get($this->fetchDataFromPackagist(), 'values.0', 0);
 
         if ($downloads === 0) {
             return;
