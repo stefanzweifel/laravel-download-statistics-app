@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Jobs\FetchDownloadsForVersionJob;
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -53,7 +54,7 @@ class FetchDownloads extends Command
 
     private function getNormalizedLaravelVersions(): Collection
     {
-        $versions = collect(array_get($this->getResponseFromPackagist(), 'package.versions'));
+        $versions = collect(Arr::get($this->getResponseFromPackagist(), 'package.versions'));
 
         // Only keep version in the format v.0.0.0
         // (ignores beta or dev releases)

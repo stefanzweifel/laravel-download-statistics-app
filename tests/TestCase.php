@@ -12,9 +12,9 @@ abstract class TestCase extends BaseTestCase
     public function setUp() : void
     {
         parent::setUp();
-
         TestResponse::macro('data', function ($key) {
             return $this->original->getData()[$key];
         });
     }
+
 }
