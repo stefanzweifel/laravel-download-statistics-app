@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "275e8ba5a2213e55a18e44ddc198d870",
+    "content-hash": "e221670865d8359c2736940fcf1df406",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2527,34 +2527,36 @@
         },
         {
             "name": "spatie/laravel-export",
-            "version": "0.1.5",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-export.git",
-                "reference": "c10aebb8ef1d8451d80f8b256f903e5b83785331"
+                "reference": "abf9ae7f1de6109568e9d47eb7add93e45cc75fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-export/zipball/c10aebb8ef1d8451d80f8b256f903e5b83785331",
-                "reference": "c10aebb8ef1d8451d80f8b256f903e5b83785331",
+                "url": "https://api.github.com/repos/spatie/laravel-export/zipball/abf9ae7f1de6109568e9d47eb7add93e45cc75fe",
+                "reference": "abf9ae7f1de6109568e9d47eb7add93e45cc75fe",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.3",
-                "illuminate/console": "~5.7.0|~5.8.0|^6.0",
-                "illuminate/contracts": "~5.7.0|~5.8.0|^6.0",
-                "illuminate/support": "~5.7.0|~5.8.0|^6.0",
+                "illuminate/console": "^6.0",
+                "illuminate/contracts": "^6.0",
+                "illuminate/http": "^6.0",
+                "illuminate/support": "^6.0",
                 "nyholm/psr7": "^1.1",
-                "php": "^7.1",
+                "php": "^7.2",
                 "psr/http-message": "^1.0",
                 "spatie/crawler": "^4.3",
+                "symfony/console": "^4.2",
                 "symfony/http-foundation": "^4.2",
                 "symfony/process": "^4.2",
                 "symfony/psr-http-message-bridge": "^1.2"
             },
             "require-dev": {
-                "larapack/dd": "^1.0",
-                "phpunit/phpunit": "^7.0"
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.0"
             },
             "type": "library",
             "extra": {
@@ -2587,7 +2589,7 @@
                 "laravel-export",
                 "spatie"
             ],
-            "time": "2019-09-20T10:45:26+00:00"
+            "time": "2019-10-01T08:43:33+00:00"
         },
         {
             "name": "spatie/robots-txt",
@@ -4182,16 +4184,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v6.0.4",
+            "version": "v6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "4aea0cd7acbdff113968c9c4e735532e10ea1393"
+                "reference": "8f56fad98222f8fe8c008cbae449f687e331444a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/4aea0cd7acbdff113968c9c4e735532e10ea1393",
-                "reference": "4aea0cd7acbdff113968c9c4e735532e10ea1393",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/8f56fad98222f8fe8c008cbae449f687e331444a",
+                "reference": "8f56fad98222f8fe8c008cbae449f687e331444a",
                 "shasum": ""
             },
             "require": {
@@ -4228,7 +4230,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2019-09-17T12:13:52+00:00"
+            "time": "2019-10-02T19:55:13+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
