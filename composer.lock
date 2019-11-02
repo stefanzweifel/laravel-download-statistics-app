@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06aa26b16991a7d0555a9692ebd1c139",
+    "content-hash": "e221670865d8359c2736940fcf1df406",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2528,16 +2528,16 @@
         },
         {
             "name": "spatie/laravel-export",
-            "version": "0.2.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-export.git",
-                "reference": "5482a6969ace3aeb3c40e0788cdf581c561f4aa9"
+                "reference": "abf9ae7f1de6109568e9d47eb7add93e45cc75fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-export/zipball/5482a6969ace3aeb3c40e0788cdf581c561f4aa9",
-                "reference": "5482a6969ace3aeb3c40e0788cdf581c561f4aa9",
+                "url": "https://api.github.com/repos/spatie/laravel-export/zipball/abf9ae7f1de6109568e9d47eb7add93e45cc75fe",
+                "reference": "abf9ae7f1de6109568e9d47eb7add93e45cc75fe",
                 "shasum": ""
             },
             "require": {
@@ -2590,7 +2590,7 @@
                 "laravel-export",
                 "spatie"
             ],
-            "time": "2019-10-16T14:43:54+00:00"
+            "time": "2019-10-01T08:43:33+00:00"
         },
         {
             "name": "spatie/robots-txt",
@@ -4981,8 +4981,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "homepage": "https://github.com/filp"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -5349,9 +5349,9 @@
             "authors": [
                 {
                     "name": "Phil Bennett",
+                    "role": "Developer",
                     "email": "philipobenito@gmail.com",
-                    "homepage": "http://www.philipobenito.com",
-                    "role": "Developer"
+                    "homepage": "http://www.philipobenito.com"
                 }
             ],
             "description": "A fast and intuitive dependency injection container.",
@@ -7432,8 +7432,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Collection of value objects that represent the types of the PHP type system",
@@ -8671,8 +8671,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
