@@ -4769,16 +4769,16 @@
         },
         {
             "name": "facade/flare-client-php",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/flare-client-php.git",
-                "reference": "608c2be3157b09f1868ca97ea4ddf3434ee83d63"
+                "reference": "04c0bbd1881942f59e27877bac3b29ba57519666"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/608c2be3157b09f1868ca97ea4ddf3434ee83d63",
-                "reference": "608c2be3157b09f1868ca97ea4ddf3434ee83d63",
+                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/04c0bbd1881942f59e27877bac3b29ba57519666",
+                "reference": "04c0bbd1881942f59e27877bac3b29ba57519666",
                 "shasum": ""
             },
             "require": {
@@ -4819,20 +4819,20 @@
                 "flare",
                 "reporting"
             ],
-            "time": "2019-10-07T19:15:46+00:00"
+            "time": "2019-11-08T11:11:17+00:00"
         },
         {
             "name": "facade/ignition",
-            "version": "1.11.2",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "862cbc2dfffa1fa28b47822a116e5b2e03b421db"
+                "reference": "67736a01597b9e08f00a1fc8966b92b918dba5ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/862cbc2dfffa1fa28b47822a116e5b2e03b421db",
-                "reference": "862cbc2dfffa1fa28b47822a116e5b2e03b421db",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/67736a01597b9e08f00a1fc8966b92b918dba5ea",
+                "reference": "67736a01597b9e08f00a1fc8966b92b918dba5ea",
                 "shasum": ""
             },
             "require": {
@@ -4890,7 +4890,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2019-10-13T10:42:06+00:00"
+            "time": "2019-11-14T10:51:35+00:00"
         },
         {
             "name": "facade/ignition-contracts",
