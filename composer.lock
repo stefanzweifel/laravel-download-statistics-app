@@ -5632,16 +5632,16 @@
         },
         {
             "name": "nunomaduro/phpinsights",
-            "version": "v1.10.3",
+            "version": "v1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/phpinsights.git",
-                "reference": "966303fac1c225d7efe295d9d09040bf328102e6"
+                "reference": "37a03e4569472d6638ad46653fc6704689955bd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/966303fac1c225d7efe295d9d09040bf328102e6",
-                "reference": "966303fac1c225d7efe295d9d09040bf328102e6",
+                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/37a03e4569472d6638ad46653fc6704689955bd2",
+                "reference": "37a03e4569472d6638ad46653fc6704689955bd2",
                 "shasum": ""
             },
             "require": {
@@ -5659,8 +5659,8 @@
                 "sensiolabs/security-checker": "^6.0",
                 "slevomat/coding-standard": "^5.0",
                 "squizlabs/php_codesniffer": "^3.4",
-                "symfony/console": "^4.2",
-                "symfony/finder": "^4.2"
+                "symfony/console": "^4.2|^5.0",
+                "symfony/finder": "^4.2|^5.0"
             },
             "require-dev": {
                 "illuminate/console": "^5.8",
@@ -5670,7 +5670,7 @@
                 "phpstan/phpstan-strict-rules": "^0.11",
                 "phpunit/phpunit": "^8.0",
                 "roave/no-floaters": "^1.1",
-                "symfony/var-dumper": "^4.2",
+                "symfony/var-dumper": "^4.2|^5.0",
                 "symplify/easy-coding-standard": "^6.0",
                 "thecodingmachine/phpstan-strict-rules": "^0.11.0"
             },
@@ -5712,7 +5712,7 @@
                 "quality",
                 "source"
             ],
-            "time": "2019-11-17T20:52:30+00:00"
+            "time": "2019-11-23T20:34:24+00:00"
         },
         {
             "name": "object-calisthenics/phpcs-calisthenics-rules",
@@ -7509,16 +7509,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.8",
+            "version": "v4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "9abbb7ef96a51f4d7e69627bc6f63307994e4263"
+                "reference": "d12b01cba60be77b583c9af660007211e3909854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/9abbb7ef96a51f4d7e69627bc6f63307994e4263",
-                "reference": "9abbb7ef96a51f4d7e69627bc6f63307994e4263",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/d12b01cba60be77b583c9af660007211e3909854",
+                "reference": "d12b01cba60be77b583c9af660007211e3909854",
                 "shasum": ""
             },
             "require": {
@@ -7528,7 +7528,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -7555,7 +7555,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20T14:07:54+00:00"
+            "time": "2019-11-12T14:51:11+00:00"
         },
         {
             "name": "symfony/http-client",
