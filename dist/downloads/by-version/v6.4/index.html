@@ -35,6 +35,12 @@
                 <details-menu role="menu" class="absolute w-32 mt-2 -ml-1 bg-white border border-gray-300 rounded overflow-hidden shadow">
                     <ul class=" text-sm">
                                                     <li>
+                                <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-version/v6.6">v6.6</a>
+                            </li>
+                                                    <li>
+                                <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-version/v6.5">v6.5</a>
+                            </li>
+                                                    <li>
                                 <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-version/v6.4">v6.4</a>
                             </li>
                                                     <li>
@@ -94,6 +100,9 @@
                 <details-menu role="menu" class="absolute w-40 mt-2 -ml-1 bg-white border border-gray-300 rounded overflow-hidden shadow">
                     <ul class="text-sm">
                                                     <li>
+                                <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-month/2019-11">November 2019</a>
+                            </li>
+                                                    <li>
                                 <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-month/2019-10">October 2019</a>
                             </li>
                                                     <li>
@@ -126,9 +135,6 @@
                                                     <li>
                                 <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-month/2018-12">December 2018</a>
                             </li>
-                                                    <li>
-                                <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-month/2018-11">November 2018</a>
-                            </li>
                                             </ul>
                 </details-menu>
             </details>
@@ -149,7 +155,7 @@
                 <p class="text-xl md:text-2xl">
                     Laravel <mark class="font-bold bg-yellow-200">v6.4</mark> has been downloaded
                     <mark class="font-bold bg-yellow-200">
-                        138&#039;012
+                        275&#039;502
                     </mark> times so far.
                 </p>
 
@@ -160,9 +166,7 @@
             </div>
             <div class="md:w-1/2">
 
-                                    <div class="bg-gray-300 h-56 flex justify-center items-center italic">
-                        <p>Not Enough <span class="line-through">Minerals</span> Data!</p>
-                    </div>
+                                    <canvas id="chart-downloads-over-time" class="my-8 md:my-0"></canvas>
                             </div>
 
         </div>
@@ -176,11 +180,11 @@
         var chartDownloadsOverTime = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["October 2019"],
+                labels: ["October 2019","November 2019"],
                 datasets: [
                     {
                         label: '# of Downloads',
-                        data: [138012],
+                        data: [138012,137490],
                         backgroundColor: [
                             'rgba(245, 82, 71, 0.3)'
                         ],
@@ -213,7 +217,7 @@
                 <div class="md:flex items-center justify-between">
                     <div class="text-sm mb-4 md:mb-0">
                         <p class="mb-1">
-                            Download numbers have been last updated at <mark class="bg-yellow-200">2nd November, 2019</mark>.
+                            Download numbers have been last updated at <mark class="bg-yellow-200">1st December, 2019</mark>.
                         </p>
                         <p>
                             A project by <a href="https://twitter.com/_stefanzweifel" target="_blank">Stefan Zweifel</a>.
