@@ -15,7 +15,7 @@
         "nothingworks/blade-svg": "^0.3.2",
         "spatie/laravel-export": "0.2.0",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
