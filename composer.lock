@@ -987,16 +987,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.4.4",
+            "version": "v3.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "7c36d24b200b60a059ab20f5b53f5bb6f4d2da40"
+                "reference": "025f953b4902a9b0b172e6d5fe19d0809701259e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/7c36d24b200b60a059ab20f5b53f5bb6f4d2da40",
-                "reference": "7c36d24b200b60a059ab20f5b53f5bb6f4d2da40",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/025f953b4902a9b0b172e6d5fe19d0809701259e",
+                "reference": "025f953b4902a9b0b172e6d5fe19d0809701259e",
                 "shasum": ""
             },
             "require": {
@@ -1052,7 +1052,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-12-10T16:50:59+00:00"
+            "time": "2019-12-23T19:45:03+00:00"
         },
         {
             "name": "laravel/tinker",
