@@ -1594,16 +1594,16 @@
         },
         {
             "name": "nothingworks/blade-svg",
-            "version": "v0.3.2",
+            "version": "v0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adamwathan/blade-svg.git",
-                "reference": "5ed76bbff36a3d0025c7ee8ea1e260c3e2bc1671"
+                "reference": "f8a21180d21d2bc77a5bca6a6550e5d6816e79a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/5ed76bbff36a3d0025c7ee8ea1e260c3e2bc1671",
-                "reference": "5ed76bbff36a3d0025c7ee8ea1e260c3e2bc1671",
+                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/f8a21180d21d2bc77a5bca6a6550e5d6816e79a5",
+                "reference": "f8a21180d21d2bc77a5bca6a6550e5d6816e79a5",
                 "shasum": ""
             },
             "require": {
@@ -1640,7 +1640,7 @@
                     "email": "adam.wathan@gmail.com"
                 }
             ],
-            "time": "2019-08-22T13:44:02+00:00"
+            "time": "2019-09-19T12:28:31+00:00"
         },
         {
             "name": "nyholm/psr7",
