@@ -942,16 +942,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.4.7",
+            "version": "v3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "45a76521b4c378eb97bbc86ef59fd6e323f9d8d1"
+                "reference": "6f1e718956b431c721f9eb11a57de65947f06e66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/45a76521b4c378eb97bbc86ef59fd6e323f9d8d1",
-                "reference": "45a76521b4c378eb97bbc86ef59fd6e323f9d8d1",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/6f1e718956b431c721f9eb11a57de65947f06e66",
+                "reference": "6f1e718956b431c721f9eb11a57de65947f06e66",
                 "shasum": ""
             },
             "require": {
@@ -1007,7 +1007,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2020-01-14T16:41:11+00:00"
+            "time": "2020-01-28T21:07:02+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2982,16 +2982,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "89c3fd5c299b940333bc6fe9f1b8db1b0912c759"
+                "reference": "20236471058bbaa9907382500fc14005c84601f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/89c3fd5c299b940333bc6fe9f1b8db1b0912c759",
-                "reference": "89c3fd5c299b940333bc6fe9f1b8db1b0912c759",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/20236471058bbaa9907382500fc14005c84601f0",
+                "reference": "20236471058bbaa9907382500fc14005c84601f0",
                 "shasum": ""
             },
             "require": {
@@ -3034,7 +3034,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-08T17:29:02+00:00"
+            "time": "2020-01-25T12:44:29+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -3890,7 +3890,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
