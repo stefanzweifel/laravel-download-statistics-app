@@ -59,6 +59,7 @@ class DownloadsPerMonth extends Model
             ->where('minor_version', $version)
             ->where('date', $month)
             ->groupBy('minor_version')
+            ->groupBy('date')
             ->get([
                 'minor_version',
                 'date',

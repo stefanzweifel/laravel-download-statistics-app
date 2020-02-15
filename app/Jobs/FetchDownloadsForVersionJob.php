@@ -42,13 +42,13 @@ class FetchDownloadsForVersionJob implements ShouldQueue
 
     public function handle()
     {
-        $downloads = Arr::get($this->fetchDataFromPackagist(), 'values.0', 0);
+        $downloads = collect(Arr::get($this->fetchDataFromPackagist(), 'values'))->first()[0];
+
+        Log::debug("version: {$this->version} - month: {$this->from->format('Y-m')} - downloads: {$downloads}");
 
         if ($downloads === 0) {
             return;
         }
-
-        Log::debug("version: {$this->version} - month: {$this->from->format('Y-m')} - downloads: {$downloads}");
 
         $this->storeDownloads($downloads);
     }
