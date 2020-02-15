@@ -23,6 +23,16 @@
 
         @include('layouts._nav')
 
+        <div class="bg-red-100 border-t border-b border-red-400 text-red-700 lg:text-center" role="alert">
+            <div class="container mx-auto px-4 py-2">
+                <span class="block sm:inline">
+                    Packagist updated their download statistics, which make this project redundant. Check out Laravel's download statistics on
+                    <a href="https://packagist.org/packages/laravel/framework/stats#major/all" target="_blank">
+                        packagist.org
+                    </a>.
+                </span>
+            </div>
+        </div>
 
         <main class="flex-1 bg-gray-100">
             @yield('content')

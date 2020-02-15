@@ -12,14 +12,16 @@ html, body {
 
 @tailwind utilities;
 
-
-details summary::-webkit-details-marker {
-  // display:none;
+/** Firefox */
+.summary-hide-marker {
+    list-style-type: none;
 }
 
+/** Chrome and others */
 .summary-hide-marker::-webkit-details-marker {
     display: none;
 }
+
 
 .bg-swoosh {
     background-image: url('/images/background-swoosh.svg')
