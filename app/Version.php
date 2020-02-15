@@ -18,7 +18,7 @@ class Version
         $v = VersionParser::fromString($version);
 
         if ($v->getMajor() >= 6) {
-            return "v{$v->getMajor()}";
+            return "v{$v->getMajor()}.0";
         }
 
         return substr($version, 0, 4);
@@ -26,7 +26,9 @@ class Version
 
     public static function isLaravelVersion(string $version): bool
     {
-        $v = VersionParser::fromString($version);
+        $removePrefix = str_replace('v', '', $version);
+
+        $v = VersionParser::fromString("$removePrefix.0");
 
         if ($v->getMajor() >= 6) {
             return true;

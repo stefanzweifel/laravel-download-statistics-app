@@ -14,12 +14,12 @@ class VersionTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_6_for_a_newer_laravel_version()
+    public function it_returns_6_0_for_a_newer_laravel_version()
     {
         $this->assertEquals(true, Version::isLaravelVersion('v6.15.0'));
 
-        $this->assertEquals('v6', Version::minorVersion('v6.15.0'));
+        $this->assertEquals('v6.0', Version::minorVersion('v6.15.0'));
 
-        $this->assertEquals('v7', Version::minorVersion('v7.10.0'));
+        $this->assertEquals('v7.0', Version::minorVersion('v7.10.0'));
     }
 }
