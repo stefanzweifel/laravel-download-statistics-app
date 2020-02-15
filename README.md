@@ -2,6 +2,7 @@
 
 > Aggregated download statistics for [Laravel](https://laravel.com)
 
+**Note:** Packagist.org has recently been updated to show the install numbers per major version (See [composer/packagist#1006](https://github.com/composer/packagist/issues/1006)). This change makes this page redundant. You can checkout Laravel's download statistics now on [packagist.org](https://packagist.org/packages/laravel/framework/stats#major/all).
 
 ## How are numbers calculated
 
