@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Jobs\FetchDownloadsForVersionJob;
+use Carbon\CarbonInterval;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
@@ -16,7 +17,7 @@ class FetchDownloads extends Command
      *
      * @var string
      */
-    protected $signature = 'app:fetch-downloads {--date=}';
+    protected $signature = 'app:fetch-downloads {--date=} {--all=false}';
 
     /**
      * The console command description.
@@ -33,6 +34,12 @@ class FetchDownloads extends Command
     public function handle()
     {
         $date = $this->option('date');
+        $all = $this->option('all');
+
+        if ($all !== 'false') {
+            $this->fetchVersionsForAllMonths();
+            return;
+        }
 
         if (is_null($date)) {
             $fromDate = Carbon::parse('first day of last month');
@@ -45,7 +52,22 @@ class FetchDownloads extends Command
         $this->fetchVersionsAndDispatchJobs($fromDate, $toDate);
     }
 
-    private function fetchVersionsAndDispatchJobs($fromDate, $toDate): void
+    private function fetchVersionsForAllMonths(): void
+    {
+        $period = collect(CarbonInterval::months(1)->toPeriod(
+            Carbon::parse('first day of May 2013'),
+            Carbon::parse('last day of last month')
+        ))->reverse();
+
+        $period->each(function ($date) {
+            $fromDate = $date->copy()->firstOfMonth();
+            $toDate = $date->copy()->lastOfMonth();
+
+            $this->fetchVersionsAndDispatchJobs($fromDate, $toDate);
+        });
+    }
+
+    private function fetchVersionsAndDispatchJobs(Carbon $fromDate, Carbon $toDate): void
     {
         $this->getNormalizedLaravelVersions()->each(function ($version) use ($fromDate, $toDate) {
             dispatch(new FetchDownloadsForVersionJob($version, $fromDate, $toDate));
@@ -61,7 +83,7 @@ class FetchDownloads extends Command
         return $versions
             ->keys()
             ->filter(function ($version) {
-                $pattern = '/^v([4-6])\.(\d)*\.(\d)*$/';
+                $pattern = '/^v([4-9])\.(\d)*\.(\d)*$/';
                 return preg_match($pattern, $version);
             })
             ->values();
