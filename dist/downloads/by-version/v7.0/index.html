@@ -85,6 +85,9 @@
                 <details-menu role="menu" class="absolute w-40 mt-2 -ml-1 bg-white border border-gray-300 rounded overflow-hidden shadow">
                     <ul class="text-sm">
                                                     <li>
+                                <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-month/2020-04">April 2020</a>
+                            </li>
+                                                    <li>
                                 <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-month/2020-03">March 2020</a>
                             </li>
                                                     <li>
@@ -117,9 +120,6 @@
                                                     <li>
                                 <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-month/2019-05">May 2019</a>
                             </li>
-                                                    <li>
-                                <a role="menuitem" class="text-black py-1 px-3 block no-underline hover:no-underline hover:text-white hover:bg-gray-700" href="/downloads/by-month/2019-04">April 2019</a>
-                            </li>
                                             </ul>
                 </details-menu>
             </details>
@@ -150,7 +150,7 @@
                 <p class="text-xl md:text-2xl">
                     Laravel <mark class="font-bold bg-yellow-200">v7.0</mark> has been downloaded
                     <mark class="font-bold bg-yellow-200">
-                        579&#039;545
+                        1&#039;444&#039;025
                     </mark> times so far.
                 </p>
 
@@ -161,9 +161,7 @@
             </div>
             <div class="md:w-1/2">
 
-                                    <div class="bg-gray-300 h-56 flex justify-center items-center italic">
-                        <p>Not Enough <span class="line-through">Minerals</span> Data!</p>
-                    </div>
+                                    <canvas id="chart-downloads-over-time" class="my-8 md:my-0"></canvas>
                             </div>
 
         </div>
@@ -177,11 +175,11 @@
         var chartDownloadsOverTime = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["March 2020"],
+                labels: ["March 2020","April 2020"],
                 datasets: [
                     {
                         label: '# of Downloads',
-                        data: [579545],
+                        data: [579545,864480],
                         backgroundColor: [
                             'rgba(245, 82, 71, 0.3)'
                         ],
@@ -214,7 +212,7 @@
                 <div class="md:flex items-center justify-between">
                     <div class="text-sm mb-4 md:mb-0">
                         <p class="mb-1">
-                            Download numbers have been last updated at <mark class="bg-yellow-200">1st April, 2020</mark>.
+                            Download numbers have been last updated at <mark class="bg-yellow-200">1st May, 2020</mark>.
                         </p>
                         <p>
                             A project by <a href="https://twitter.com/_stefanzweifel" target="_blank">Stefan Zweifel</a>.
