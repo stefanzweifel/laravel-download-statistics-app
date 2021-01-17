@@ -1,37 +1,57 @@
-on:
-  schedule:
-  - cron: '15 1 1 * *'
-
 name: New Monthly Build
+
+'on':
+  workflow_dispatch: null
+  schedule:
+    - cron: 15 1 1 * *
+
 jobs:
+
   update-data-set:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 1
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: composer install
-      uses: MilesChou/composer-action@master
-      with:
-        args: install --ignore-platform-reqs --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-    - name: Copy environment files
-      run: cp .env.example .env
+      - uses: actions/cache@v2
+        with:
+          path: '${{ steps.composer-cache.outputs.dir }}'
+          key: '${{ runner.os }}-composer-${{ hashFiles(''**/composer.lock'') }}'
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
-    - name: Generate app key
-      run: php artisan key:generate
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extension: >-
+            dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite,
+            bcmath, soap, intl, gd, exif, iconv, imagick
+          ini-values: pcov.directory=app
+          coverage: pcov
 
-    - name: Fetch download numbers for last month
-      run: php artisan app:fetch-downloads
+      - name: Install dependencies
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install --prefer-dist --no-interaction --no-suggest
 
-    - name: Create new HTML Export
-      run: php artisan export
+      - name: Copy environment files
+        run: cp .env.example .env
 
-    - uses: stefanzweifel/git-auto-commit-action@v2.1.0
-      with:
-        commit_message: Update Data Set
-        branch: master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate app key
+        run: 'php artisan key:generate'
+
+      - name: Fetch download numbers for last month
+        run: 'php artisan app:fetch-downloads'
+
+      - name: Create new HTML Export
+        run: php artisan export
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update Data Set
+          branch: master
