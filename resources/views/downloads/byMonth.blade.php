@@ -18,7 +18,7 @@
                         {{ format_download_numbers($mostPopular->downloads) }}
                     </mark>
                     times.
-                    Thats
+                    That's
                     <mark class="whitespace-no-wrap font-bold bg-yellow-200 px-1">
                         {{ round($mostPopular->percentage, 1) }}%
                     </mark>
