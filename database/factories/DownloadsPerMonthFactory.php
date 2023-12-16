@@ -1,7 +1,7 @@
 <?php
 
-use App\DownloadsPerMonth;
-use App\Version;
+use App\Models\DownloadsPerMonth;
+use App\Models\Version;
 use Faker\Generator as Faker;
 use Illuminate\Support\Carbon;
 

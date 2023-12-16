@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\DataSets\DownloadsByVersionDataSet;
-use App\DownloadsPerMonth;
-use App\Version;
+use App\Models\DownloadsPerMonth;
+use App\Models\Version;
 
 class DownloadsByVersionController extends Controller
 {

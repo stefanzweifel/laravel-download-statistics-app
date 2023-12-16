@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\DownloadsPerMonth;
+use App\Models\DownloadsPerMonth;
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
 use Illuminate\Support\Facades\View;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\DownloadsPerMonth;
+use App\Models\DownloadsPerMonth;
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
 

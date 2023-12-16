@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Http;
 
-use App\DownloadsPerMonth;
+use App\Models\DownloadsPerMonth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Version;
+use App\Models\Version;
 use PHPUnit\Framework\TestCase;
 
 class VersionTest extends TestCase
