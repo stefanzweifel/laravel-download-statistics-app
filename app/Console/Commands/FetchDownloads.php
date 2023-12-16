@@ -12,25 +12,10 @@ use Illuminate\Support\Facades\Cache;
 
 class FetchDownloads extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'app:fetch-downloads {--date=} {--all=false}';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Fetch downloads data from packagist.org';
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
         $date = $this->option('date');
@@ -83,7 +68,7 @@ class FetchDownloads extends Command
         return $versions
             ->keys()
             ->filter(function ($version) {
-                $pattern = '/^v([4-9])\.(\d)*\.(\d)*$/';
+                $pattern = '/^v([4-9]|1[0-9]+)\.(\d)*\.(\d)*$/';
                 return preg_match($pattern, $version);
             })
             ->values();
