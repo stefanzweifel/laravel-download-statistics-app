@@ -17,7 +17,8 @@ class VersionTest extends TestCase
     #[Test]
     public function it_returns_6_0_for_a_newer_laravel_version()
     {
-        $this->assertEquals(true, Version::isLaravelVersion('v6.15.0'));
+        $this->assertEquals(true, Version::isLaravelVersion('v4.2'));
+        $this->assertEquals(true, Version::isLaravelVersion('v6.15'));
 
         $this->assertEquals('v6.0', Version::minorVersion('v6.15.0'));
 
