@@ -4,13 +4,14 @@ namespace Tests\Feature\Http;
 
 use App\Models\DownloadsPerMonth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class DownloadsByVersionControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function it_throws_404_error_if_no_statistics_data_is_available_for_given_version()
     {
         $response = $this
@@ -18,7 +19,7 @@ class DownloadsByVersionControllerTest extends TestCase
             ->assertStatus(404);
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_statistics_data_grouped_by_minor_version_for_given_version()
     {
         factory(DownloadsPerMonth::class)->create([
