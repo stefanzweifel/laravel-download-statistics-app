@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataSets\DownloadsByVersionDataSet;
-use App\DownloadsPerMonth;
+use App\Models\DownloadsPerMonth;
 use Illuminate\Support\Carbon;
 
 class DownloadsByMonthController extends Controller

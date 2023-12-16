@@ -6,13 +6,14 @@ use App\Jobs\FetchDownloadsForVersionJob;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Queue;
+use PHPUnit\Framework\Attributes\Test as TestAlias;
 use Tests\TestCase;
 
 class FetchDownloadsTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[TestAlias]
     public function it_dispatches_jobs_to_get_download_numbers_for_all_laravel_versions()
     {
         Queue::fake();
@@ -29,7 +30,7 @@ class FetchDownloadsTest extends TestCase
         });
     }
 
-    /** @test */
+    #[TestAlias]
     public function it_dispatches_jobs_to_get_download_numbers_and_uses_given_date()
     {
         Queue::fake();

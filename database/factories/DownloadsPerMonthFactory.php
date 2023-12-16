@@ -1,20 +1,30 @@
 <?php
 
-use App\DownloadsPerMonth;
-use App\Version;
-use Faker\Generator as Faker;
-use Illuminate\Support\Carbon;
+namespace Database\Factories;
 
-$factory->define(DownloadsPerMonth::class, function (Faker $faker) {
-    $date = Carbon::parse($faker->dateTimeBetween('-2 years'));
-    $version = $faker->randomElement(['v5.0.0', 'v5.1.0', 'v5.2.0', 'v5.3.0', 'v4.2.0', 'v.4.1.0']);
+use App\Models\DownloadsPerMonth;
+use App\Models\Version;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Foundation\Testing\WithFaker;
 
-    return [
-        'version' => $version,
-        'minor_version' => Version::minorVersion($version),
-        'year' => $date->format('Y'),
-        'month' => $date->format('m'),
-        'date' => $date->format('Y-m'),
-        'downloads' => $faker->numberBetween(10, 999999),
-    ];
-});
+class DownloadsPerMonthFactory extends Factory
+{
+    protected $model = DownloadsPerMonth::class;
+
+    public function definition(): array
+    {
+        $date = Carbon::parse($this->faker->dateTimeBetween('-2 years'));
+        $version = $this->faker->randomElement(['v5.0.0', 'v5.1.0', 'v5.2.0', 'v5.3.0', 'v4.2.0', 'v4.1.0']);
+
+        return [
+            'version' => $version,
+            'minor_version' => Version::minorVersion($version),
+            'year' => $date->format('Y'),
+            'month' => $date->format('m'),
+            'date' => $date->format('Y-m'),
+            'downloads' => $this->faker->numberBetween(10, 999999),
+        ];
+    }
+}
+

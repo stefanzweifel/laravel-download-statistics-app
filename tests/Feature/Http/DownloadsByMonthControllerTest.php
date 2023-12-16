@@ -2,31 +2,32 @@
 
 namespace Tests\Feature\Http;
 
-use App\DownloadsPerMonth;
+use App\Models\DownloadsPerMonth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class DownloadsByMonthControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function it_throws_404_error_if_no_downloads_are_available_for_given_month()
     {
         $response = $this->get(route('downloads.byMonth', '2019-01'))
             ->assertStatus(404);
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_statistics_data_for_given_month()
     {
-        factory(DownloadsPerMonth::class)->create([
+        DownloadsPerMonth::factory()->create([
             'version' => 'v5.1.1',
             'minor_version' => 'v5.1',
             'downloads' => 30,
             'date' => '2019-01',
         ]);
-        factory(DownloadsPerMonth::class)->create([
+        DownloadsPerMonth::factory()->create([
             'version' => 'v5.0.0',
             'minor_version' => 'v5.0',
             'downloads' => 10,

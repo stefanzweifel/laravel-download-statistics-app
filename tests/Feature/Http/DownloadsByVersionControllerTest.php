@@ -2,15 +2,16 @@
 
 namespace Tests\Feature\Http;
 
-use App\DownloadsPerMonth;
+use App\Models\DownloadsPerMonth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class DownloadsByVersionControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function it_throws_404_error_if_no_statistics_data_is_available_for_given_version()
     {
         $response = $this
@@ -18,34 +19,34 @@ class DownloadsByVersionControllerTest extends TestCase
             ->assertStatus(404);
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_statistics_data_grouped_by_minor_version_for_given_version()
     {
-        factory(DownloadsPerMonth::class)->create([
+        DownloadsPerMonth::factory()->create([
             'version' => 'v5.1.1',
             'minor_version' => 'v5.1',
             'downloads' => 30,
             'date' => now()->subMonths(1)->format('Y-m'),
         ]);
-        factory(DownloadsPerMonth::class)->create([
+        DownloadsPerMonth::factory()->create([
             'version' => 'v5.0.0',
             'minor_version' => 'v5.0',
             'downloads' => 10,
             'date' => now()->subMonths(2)->format('Y-m'),
         ]);
-        factory(DownloadsPerMonth::class)->create([
+        DownloadsPerMonth::factory()->create([
             'version' => 'v5.0.1',
             'minor_version' => 'v5.0',
             'downloads' => 10,
             'date' => now()->subMonths(1)->format('Y-m'),
         ]);
-        factory(DownloadsPerMonth::class)->create([
+        DownloadsPerMonth::factory()->create([
             'version' => 'v5.0.2',
             'minor_version' => 'v5.0',
             'downloads' => 20,
             'date' => now()->subMonths(1)->format('Y-m'),
         ]);
-        factory(DownloadsPerMonth::class)->create([
+        DownloadsPerMonth::factory()->create([
             'version' => 'v5.0.3',
             'minor_version' => 'v5.0',
             'downloads' => 30,
